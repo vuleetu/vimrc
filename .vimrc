@@ -14,12 +14,14 @@ Bundle "Shougo/neocomplcache"
 Bundle "scrooloose/nerdtree"
 Bundle "oscarh/vimerl"
 Bundle "vim-scripts/L9"
-Bundle "Lokaltog/vim-easymotion"
+"Bundle "Lokaltog/vim-easymotion"
 Bundle "Lokaltog/vim-powerline"
 Bundle "jnwhiteh/vim-golang"
 Bundle "nsf/gocode", {'rtp': 'vim/'}
 Bundle "vim-scripts/Fortune-vimtips"
-Bundle "vim-scripts/vim-pad"
+"Bundle "vim-scripts/vim-pad"
+Bundle "godlygeek/tabular"
+Bundle "sjl/gundo.vim"
 Bundle "FuzzyFinder"
 Bundle "project.tar.gz"
 
@@ -57,6 +59,10 @@ set list
 "set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
 set listchars=tab:»-
 set whichwrap+=<,>
+set showcmd
+set showmode
+set t_Co=256
+colorscheme desert
 let g:pad_dir="/home/fisher/notepad"
 
 "自动进入上次退出时候的光标位置
@@ -72,6 +78,17 @@ let maplocalleader=','
 
 "Fast editing of the .vimrc file
 noremap <leader>rc :tabe $MYVIMRC<CR>
+
+"Tabular setting
+noremap <leader>, :Tabularize /,<CR>
+noremap <leader>,= :Tabularize /,/r1c1l0<CR>
+noremap <leader>= :Tabularize /=<CR>
+noremap <leader>== :Tabularize /=/r1c1l0<CR>
+noremap <leader>; :Tabularize /;<CR>
+noremap <leader>;= :Tabularize /;/r1c1l0<CR>
+
+"gundo
+nnoremap <silent> <F4> :GundoToggle<CR>
 
 imap <C-f> <Right>
 imap <C-b> <Left>
