@@ -14,6 +14,10 @@ Bundle "Shougo/neocomplcache"
 Bundle "scrooloose/nerdtree"
 ""NerdCommenter
 Bundle "scrooloose/nerdcommenter"
+""Sudo plugin
+Bundle "sudo.vim"
+""Session manager
+"Bundle "sessionman.vim"
 ""erlang
 Bundle "oscarh/vimerl"
 Bundle "aerosol/vim-erlang-skeletons"
@@ -58,6 +62,7 @@ Bundle "vim-scripts/YankRing.vim"
 ""Colorscheme
 Bundle "vim-scripts/xoria256.vim"
 Bundle "altercation/vim-colors-solarized"
+Bundle "Lucius"
 
 "SuperTab config
 "let g:SuperTabRetainCompletionType=2
