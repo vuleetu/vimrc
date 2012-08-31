@@ -211,3 +211,6 @@ nnoremap <silent> <Leader>nf :NERDTreeFind<CR>
 let NERDTreeWinPos = "right"
 let NERDTreeMinimalUI = 1
 let NERDTreeWinSize = 38
+
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+let g:Powerline_symbols = 'fancy'
