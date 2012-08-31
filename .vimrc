@@ -63,6 +63,10 @@ Bundle "vim-scripts/YankRing.vim"
 Bundle "vim-scripts/xoria256.vim"
 Bundle "altercation/vim-colors-solarized"
 Bundle "Lucius"
+Bundle "tomasr/molokai"
+Bundle "pyte"
+Bundle "Zenburn"
+Bundle "oceandeep"
 
 "SuperTab config
 "let g:SuperTabRetainCompletionType=2
@@ -76,12 +80,12 @@ Bundle "Lucius"
 
 filetype plugin indent on     " required!
 
-colorscheme solarized
 if has('gui_running')
     set background=light
 else
     set background=dark
 endif
+colorscheme solarized
 
 set winaltkeys=no
 set nobackup
