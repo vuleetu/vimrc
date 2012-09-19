@@ -50,8 +50,20 @@ Bundle "mattn/zencoding-vim"
 "gist.github.com
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
+""git
+Bundle "tpope/vim-fugitive"
+""indent object
+Bundle "michaeljsmith/vim-indent-object"
 "yankring
 Bundle "vim-scripts/YankRing.vim"
+"text object for argument
+Bundle "argtextobj.vim"
+""auto-complete for quote
+Bundle "Raimondi/delimitMate"
+""CamelCaseMotion
+Bundle "bkad/CamelCaseMotion"
+""Gold ratio
+Bundle "roman/golden-ratio"
 ""Snippets
 "Bundle "MarcWeber/vim-addon-mw-utils"
 "Bundle "tomtom/tlib_vim"
@@ -59,6 +71,27 @@ Bundle "vim-scripts/YankRing.vim"
 "Bundle "garbas/vim-snipmate"
 ""SuperTab
 "Bundle "ervandew/supertab"
+""vimfiler, let you manage file in vim
+Bundle "Shougo/unite.vim"
+Bundle "Shougo/vimfiler"
+""outline
+Bundle "h1mesuke/unite-outline"
+""Indent guide
+Bundle "mutewinter/vim-indent-guides"
+""unimpaired
+Bundle "tpope/vim-unimpaired"
+""search and substitute
+Bundle "tpope/vim-abolish"
+""text object for column
+Bundle "coderifous/textobj-word-column.vim"
+""surround
+Bundle "tpope/vim-surround"
+""syntastic
+Bundle "scrooloose/syntastic"
+""zoomwin
+Bundle "ZoomWin"
+""tagbar
+Bundle "majutsushi/tagbar"
 ""Colorscheme
 Bundle "vim-scripts/xoria256.vim"
 Bundle "altercation/vim-colors-solarized"
@@ -67,6 +100,11 @@ Bundle "tomasr/molokai"
 Bundle "pyte"
 Bundle "Zenburn"
 Bundle "oceandeep"
+Bundle "Ambient-Color-Scheme"
+Bundle "Liquid-Carbon"
+Bundle "rslate"
+Bundle "tpope/vim-vividchalk"
+Bundle "wgibbs/vim-irblack"
 
 "SuperTab config
 "let g:SuperTabRetainCompletionType=2
@@ -163,18 +201,18 @@ map <CR> o<ESC>
 nmap <Tab> gt
 nmap \ gT
 
-imap "" ""<LEFT>
-imap '' ''<LEFT>
-imap <> <><LEFT>
-imap () ()<LEFT>
-imap {} {}<LEFT>
-imap [] []<LEFT>
-cmap "" ""<LEFT>
-cmap '' ''<LEFT>
-cmap <> <><LEFT>
-cmap () ()<LEFT>
-cmap {} {}<LEFT>
-cmap [] []<LEFT>
+"imap "" ""<LEFT>
+"imap '' ''<LEFT>
+"imap <> <><LEFT>
+"imap () ()<LEFT>
+"imap {} {}<LEFT>
+"imap [] []<LEFT>
+"cmap "" ""<LEFT>
+"cmap '' ''<LEFT>
+"cmap <> <><LEFT>
+"cmap () ()<LEFT>
+"cmap {} {}<LEFT>
+"cmap [] []<LEFT>
 
 "cancel search highlight
 nnoremap <leader><CR> :noh<CR>
@@ -196,12 +234,20 @@ nnoremap <leader>fj :FufJumpList<CR>
 "自动完成设置
 set completeopt=longest,menu
 
+"Tagbar设置
+nmap <F8> :TagbarToggle<CR>
+
+"indent guide设置
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 "Vimerl设置
 set tags+=/usr/local/lib/erlang/tags
 "let erlang_man_path="/usr/local/lib/erlang/man/" "This is for jimenezrick/vimerl
 let g:erlangManPath="/usr/local/lib/erlang/man/"
 
+""Golden ratio设置
+nnoremap <leader>g :GoldenRatioResize<CR>
 
 "neocomplcache设置
 let g:neocomplcache_enable_at_startup=1
