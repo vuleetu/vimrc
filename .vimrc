@@ -27,6 +27,12 @@ Bundle "vim-scripts/L9"
 "Bundle "Lokaltog/vim-easymotion"
 ""Status bar
 Bundle "Lokaltog/vim-powerline"
+""Markdown
+Bundle "plasticboy/vim-markdown"
+""Better number control
+Bundle "myusuf3/numbers.vim"
+""Highlighting css color
+Bundle "skammer/vim-css-color"
 ""Golang
 Bundle "jnwhiteh/vim-golang"
 Bundle "nsf/gocode", {'rtp': 'vim/'}
@@ -86,12 +92,25 @@ Bundle "tpope/vim-abolish"
 Bundle "coderifous/textobj-word-column.vim"
 ""surround
 Bundle "tpope/vim-surround"
+""Align
+Bundle "tsaleh/vim-align"
 ""syntastic
 Bundle "scrooloose/syntastic"
 ""zoomwin
 Bundle "ZoomWin"
+""Command-T
+" Install ruby-dev first !important
+Bundle "wincent/Command-T"
+""Match Tag
+Bundle "gregsexton/MatchTag"
 ""tagbar
 Bundle "majutsushi/tagbar"
+""Conque execute external program
+"Bundle "Conque-Shell"
+""haml
+Bundle "tpope/vim-haml"
+""taglist
+Bundle "taglist.vim"
 ""Colorscheme
 Bundle "vim-scripts/xoria256.vim"
 Bundle "altercation/vim-colors-solarized"
@@ -105,6 +124,8 @@ Bundle "Liquid-Carbon"
 Bundle "rslate"
 Bundle "tpope/vim-vividchalk"
 Bundle "wgibbs/vim-irblack"
+Bundle "chriskempson/tomorrow-theme", {'rtp': 'vim/'}
+Bundle "sjl/badwolf"
 
 "SuperTab config
 "let g:SuperTabRetainCompletionType=2
@@ -151,6 +172,7 @@ set listchars=tab:»-
 set whichwrap+=<,>
 set showcmd
 set showmode
+set wildmenu
 set t_Co=256
 "let g:pad_dir="/home/fisher/notepad"
 
@@ -190,7 +212,19 @@ noremap <leader>;= :Tabularize /;/r1c1l0<CR>
 nnoremap <silent> <F4> :GundoToggle<CR>
 
 "yankring
-nnoremap <silent> <F11> :YRShow<CR>
+nnoremap <silent> <F9> :YRShow<CR>
+
+"taglist
+nnoremap <silent> <F8> :TlistToggle<CR>
+let Tlist_Use_Right_Window = 1
+
+"Tagbar设置
+nnoremap <silent> <F7> :TagbarToggle<CR>
+
+"Command-T setting
+nnoremap <silent> <Leader>t :CommandT<CR>
+nnoremap <silent> <Leader>f :CommandTBuffer<CR>
+
 
 imap <C-f> <Right>
 imap <C-b> <Left>
@@ -233,9 +267,6 @@ nnoremap <leader>fj :FufJumpList<CR>
 
 "自动完成设置
 set completeopt=longest,menu
-
-"Tagbar设置
-nmap <F8> :TagbarToggle<CR>
 
 "indent guide设置
 let g:indent_guides_start_level = 2
