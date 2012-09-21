@@ -100,6 +100,7 @@ Bundle "scrooloose/syntastic"
 Bundle "ZoomWin"
 ""Command-T
 " Install ruby-dev first !important
+" Then go to Command-T/ruby/command-t/, run: ruby extconf.rb && make
 Bundle "wincent/Command-T"
 ""Match Tag
 Bundle "gregsexton/MatchTag"
