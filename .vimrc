@@ -110,6 +110,8 @@ Bundle "majutsushi/tagbar"
 "Bundle "Conque-Shell"
 ""haml
 Bundle "tpope/vim-haml"
+""Narrow region
+Bundle "chrisbra/NrrwRgn"
 ""taglist
 Bundle "taglist.vim"
 ""Colorscheme
