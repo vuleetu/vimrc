@@ -106,6 +106,9 @@ Bundle "wincent/Command-T"
 Bundle "gregsexton/MatchTag"
 ""tagbar
 Bundle "majutsushi/tagbar"
+""Jslint
+""sudo apt-get install node.js first
+Bundle "hallettj/jslint.vim"
 ""Conque execute external program
 "Bundle "Conque-Shell"
 ""haml
@@ -220,6 +223,9 @@ nnoremap <silent> <F9> :YRShow<CR>
 "taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
+
+"Narrow region设置
+let g:nrrw_topbot_leftright = 'botright'
 
 "Tagbar设置
 nnoremap <silent> <F7> :TagbarToggle<CR>
