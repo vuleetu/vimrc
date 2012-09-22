@@ -109,6 +109,10 @@ Bundle "majutsushi/tagbar"
 ""Jslint
 ""sudo apt-get install node.js first
 Bundle "hallettj/jslint.vim"
+""Highlight multi words in different colors
+Bundle "Mark--Karkat"
+""Multi search
+Bundle "multisearch.vim"
 ""Conque execute external program
 "Bundle "Conque-Shell"
 ""haml
