@@ -182,7 +182,7 @@ set ruler
 "set foldenable  "开始折叠
 set list
 "set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
-set listchars=tab:»-
+set listchars=tab:»-,nbsp:¬,trail:█,extends:»,precedes:«
 set whichwrap+=<,>
 set showcmd
 set showmode
@@ -314,3 +314,7 @@ let NERDTreeWinSize = 38
 let g:Powerline_symbols = 'fancy'
 
 command W w !sudo tee % > /dev/null
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
