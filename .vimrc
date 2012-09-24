@@ -69,7 +69,7 @@ Bundle "Raimondi/delimitMate"
 ""CamelCaseMotion
 Bundle "bkad/CamelCaseMotion"
 ""Gold ratio
-Bundle "roman/golden-ratio"
+"Bundle "roman/golden-ratio"
 ""Snippets
 "Bundle "MarcWeber/vim-addon-mw-utils"
 "Bundle "tomtom/tlib_vim"
@@ -178,7 +178,7 @@ set ruler
 "set foldenable  "开始折叠
 set list
 "set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
-set listchars=tab:»-
+set listchars=tab:»-,nbsp:¬,trail:█,extends:»,precedes:«
 set whichwrap+=<,>
 set showcmd
 set showmode
@@ -291,7 +291,7 @@ set tags+=/usr/local/lib/erlang/tags
 let g:erlangManPath="/usr/local/lib/erlang/man/"
 
 ""Golden ratio设置
-nnoremap <leader>g :GoldenRatioResize<CR>
+"nnoremap <leader>g :GoldenRatioResize<CR>
 
 "neocomplcache设置
 let g:neocomplcache_enable_at_startup=1
@@ -310,3 +310,7 @@ let NERDTreeWinSize = 38
 let g:Powerline_symbols = 'fancy'
 
 command W w !sudo tee % > /dev/null
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
