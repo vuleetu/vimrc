@@ -69,7 +69,7 @@ Bundle "Raimondi/delimitMate"
 ""CamelCaseMotion
 Bundle "bkad/CamelCaseMotion"
 ""Gold ratio
-Bundle "roman/golden-ratio"
+"Bundle "roman/golden-ratio"
 ""Snippets
 "Bundle "MarcWeber/vim-addon-mw-utils"
 "Bundle "tomtom/tlib_vim"
@@ -136,6 +136,10 @@ Bundle "tpope/vim-vividchalk"
 Bundle "wgibbs/vim-irblack"
 Bundle "chriskempson/tomorrow-theme", {'rtp': 'vim/'}
 Bundle "sjl/badwolf"
+Bundle "Wombat"
+Bundle "croaker/mustang-vim"
+Bundle "candycode.vim"
+Bundle "jgdavey/vim-railscasts"
 
 "SuperTab config
 "let g:SuperTabRetainCompletionType=2
@@ -291,7 +295,7 @@ set tags+=/usr/local/lib/erlang/tags
 let g:erlangManPath="/usr/local/lib/erlang/man/"
 
 ""Golden ratio设置
-nnoremap <leader>g :GoldenRatioResize<CR>
+"nnoremap <leader>g :GoldenRatioResize<CR>
 
 "neocomplcache设置
 let g:neocomplcache_enable_at_startup=1
