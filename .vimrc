@@ -35,6 +35,8 @@ Bundle "myusuf3/numbers.vim"
 Bundle "skammer/vim-css-color"
 ""Golang
 Bundle "jnwhiteh/vim-golang"
+"go get -u github.com/nsf/gocode
+"cd .vim/bundle/gocode/vim && ./update.bash
 Bundle "nsf/gocode", {'rtp': 'vim/'}
 ""vimtips plugin
 Bundle "vim-scripts/Fortune-vimtips"
