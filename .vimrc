@@ -252,6 +252,8 @@ map <CR> o<ESC>
 nmap <Tab> gt
 nmap \ gT
 
+"nnoremap <Right> gt
+"nnoremap <Left> gT
 "imap "" ""<LEFT>
 "imap '' ''<LEFT>
 "imap <> <><LEFT>
