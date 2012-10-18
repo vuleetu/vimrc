@@ -68,6 +68,8 @@ Bundle "vim-scripts/YankRing.vim"
 Bundle "argtextobj.vim"
 ""auto-complete for quote
 Bundle "Raimondi/delimitMate"
+""mustache template
+Bundle "juvenn/mustache.vim"
 ""CamelCaseMotion
 Bundle "bkad/CamelCaseMotion"
 ""Gold ratio
@@ -241,8 +243,8 @@ let g:nrrw_topbot_leftright = 'botright'
 nnoremap <silent> <F7> :TagbarToggle<CR>
 
 "Command-T setting
-nnoremap <silent> <Leader>t :CommandT<CR>
-nnoremap <silent> <Leader>f :CommandTBuffer<CR>
+nnoremap <silent> <Leader>ct :CommandT<CR>
+nnoremap <silent> <Leader>cf :CommandTBuffer<CR>
 
 
 imap <C-f> <Right>
@@ -293,6 +295,9 @@ set completeopt=longest,menu
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
+"syntastic setting
+let g:syntastic_auto_loc_list=1
+
 "Vimerl设置
 set tags+=/usr/local/lib/erlang/tags
 "let erlang_man_path="/usr/local/lib/erlang/man/" "This is for jimenezrick/vimerl
@@ -322,3 +327,6 @@ command W w !sudo tee % > /dev/null
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+nmap <F1> <nop>
+imap <F1> <nop>
