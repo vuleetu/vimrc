@@ -53,6 +53,12 @@ Bundle "project.tar.gz"
 Bundle "SirVer/ultisnips"
 "vimwiki
 Bundle "vim-scripts/vimwiki"
+"voom Vim Outliner of Markers
+Bundle "vim-scripts/VOoM"
+"prompt function proto for c/c++
+"Bundle "mbbill/echofunc"
+"AutoComplPop
+"Bundle "vim-scripts/AutoComplPop"
 "html fast coding
 Bundle "mattn/zencoding-vim"
 "gist.github.com
@@ -106,6 +112,8 @@ Bundle "ZoomWin"
 " Install ruby-dev first !important
 " Then go to Command-T/ruby/command-t/, run: ruby extconf.rb && make
 Bundle "wincent/Command-T"
+"Organize window
+Bundle "spolu/dwm.vim"
 ""Match Tag
 Bundle "gregsexton/MatchTag"
 ""tagbar
@@ -310,6 +318,8 @@ let g:erlangManPath="/usr/local/lib/erlang/man/"
 let g:neocomplcache_enable_at_startup=1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_enable_auto_select=1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
 
 "NerdTree设置
 nnoremap <silent> <F5> :NERDTreeToggle<CR>
@@ -330,3 +340,13 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 nmap <F1> <nop>
 imap <F1> <nop>
+let g:dwm_map_keys=1
+
+"let g:AutoComplPop_Behavior = {
+"\ 'c': [ {'command' : "\<C-x>\<C-o>",
+"\       'pattern' : ".",
+"\       'repeat' : 0}
+"\      ]
+"\}
+
+"let g:AutoComplPop_CompleteoptPreview = 1
