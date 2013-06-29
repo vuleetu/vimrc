@@ -1,0 +1,589 @@
+let SessionLoad = 1
+if &cp | set nocp | endif
+let s:cpo_save=&cpo
+set cpo&vim
+inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_snippet) unite#sources#snippet#start_complete()
+inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_quick_match) unite#sources#neocomplcache#start_quick_match()
+inoremap <silent> <expr> <Plug>(neocomplcache_start_unite_complete) unite#sources#neocomplcache#start_complete()
+inoremap <silent> <Plug>(neocomplcache_start_auto_complete) =neocomplcache#popup_post()
+inoremap <silent> <SNR>61_yrrecord =YRRecord3()
+inoremap <Plug>ZenCodingAnchorizeSummary :call zencoding#anchorizeURL(1)a
+inoremap <Plug>ZenCodingAnchorizeURL :call zencoding#anchorizeURL(0)a
+inoremap <Plug>ZenCodingRemoveTag :call zencoding#removeTag()a
+inoremap <Plug>ZenCodingSplitJoinTagInsert :call zencoding#splitJoinTag()
+inoremap <Plug>ZenCodingToggleComment :call zencoding#toggleComment()a
+inoremap <Plug>ZenCodingImageSize :call zencoding#imageSize()a
+inoremap <Plug>ZenCodingPrev :call zencoding#moveNextPrev(1)
+inoremap <Plug>ZenCodingNext :call zencoding#moveNextPrev(0)
+inoremap <Plug>ZenCodingBalanceTagOutwardInsert :call zencoding#balanceTag(-1)
+inoremap <Plug>ZenCodingBalanceTagInwardInsert :call zencoding#balanceTag(1)
+inoremap <Plug>ZenCodingExpandWord u:call zencoding#expandAbbr(1,"")a
+inoremap <Plug>ZenCodingExpandAbbr u:call zencoding#expandAbbr(0,"")a
+inoremap <silent> <C-Tab> =UltiSnips_ListSnippets()
+xnoremap 	 :call UltiSnips_SaveLastVisualSelection()gvs
+snoremap <silent> 	 :call UltiSnips_ExpandSnippet()
+nmap 	 gt
+snoremap <silent> <NL> :call UltiSnips_JumpForwards()
+snoremap <silent>  :call UltiSnips_JumpBackwards()
+map  o
+nnoremap <silent>  :YRReplace '1', 'p'
+nnoremap <silent>  :YRReplace '-1', 'P'
+vmap c <Plug>ZenCodingCodePretty
+nmap A <Plug>ZenCodingAnchorizeSummary
+nmap a <Plug>ZenCodingAnchorizeURL
+nmap k <Plug>ZenCodingRemoveTag
+nmap j <Plug>ZenCodingSplitJoinTagNormal
+vmap m <Plug>ZenCodingMergeLines
+nmap / <Plug>ZenCodingToggleComment
+nmap i <Plug>ZenCodingImageSize
+nmap N <Plug>ZenCodingPrev
+nmap n <Plug>ZenCodingNext
+vmap D <Plug>ZenCodingBalanceTagOutwardVisual
+nmap D <Plug>ZenCodingBalanceTagOutwardNormal
+vmap d <Plug>ZenCodingBalanceTagInwardVisual
+nmap d <Plug>ZenCodingBalanceTagInwardNormal
+nmap , <Plug>ZenCodingExpandNormal
+vmap , <Plug>ZenCodingExpandVisual
+nmap <silent> ,w,t <Plug>VimwikiTabMakeDiaryNote
+nmap <silent> ,w,w <Plug>VimwikiMakeDiaryNote
+nmap <silent> ,w,i <Plug>VimwikiDiaryGenerateLinks
+nmap <silent> ,wi <Plug>VimwikiDiaryIndex
+nmap <silent> ,ws <Plug>VimwikiUISelect
+nmap <silent> ,ww <Plug>VimwikiIndex
+nmap ,ca <Plug>NERDCommenterAltDelims
+xmap ,cu <Plug>NERDCommenterUncomment
+nmap ,cu <Plug>NERDCommenterUncomment
+xmap ,cb <Plug>NERDCommenterAlignBoth
+nmap ,cb <Plug>NERDCommenterAlignBoth
+xmap ,cl <Plug>NERDCommenterAlignLeft
+nmap ,cl <Plug>NERDCommenterAlignLeft
+nmap ,cA <Plug>NERDCommenterAppend
+xmap ,cy <Plug>NERDCommenterYank
+nmap ,cy <Plug>NERDCommenterYank
+xmap ,cs <Plug>NERDCommenterSexy
+nmap ,cs <Plug>NERDCommenterSexy
+xmap ,ci <Plug>NERDCommenterInvert
+nmap ,ci <Plug>NERDCommenterInvert
+nmap ,c$ <Plug>NERDCommenterToEOL
+xmap ,cn <Plug>NERDCommenterNested
+nmap ,cn <Plug>NERDCommenterNested
+xmap ,cm <Plug>NERDCommenterMinimal
+nmap ,cm <Plug>NERDCommenterMinimal
+xmap ,c  <Plug>NERDCommenterToggle
+nmap ,c  <Plug>NERDCommenterToggle
+xmap ,cc <Plug>NERDCommenterComment
+nmap ,cc <Plug>NERDCommenterComment
+nnoremap <silent> ,nf :NERDTreeFind
+nnoremap <silent> ,nt :NERDTree
+nnoremap ,fj :FufJumpList
+nnoremap ,ft :FufTag
+nnoremap ,fb :FufBuffer
+nnoremap ,ff :FufFile
+nnoremap , :noh
+noremap ,;= :Tabularize /;/r1c1l0
+noremap ,; :Tabularize /;
+noremap ,== :Tabularize /=/r1c1l0
+noremap ,= :Tabularize /=
+noremap ,,= :Tabularize /,/r1c1l0
+noremap ,, :Tabularize /,
+noremap ,rc :tabe $MYVIMRC
+nmap ,wk <Plug>VimwikiTabIndex
+nmap @ :YRMapsMacro
+xnoremap <silent> P :YRPaste 'P', 'v'
+nnoremap <silent> P :YRPaste 'P'
+nmap \ gT
+xnoremap <silent> d :YRDeleteRange 'v'
+nmap gx <Plug>NetrwBrowseX
+nnoremap <silent> gp :YRPaste 'gp'
+nnoremap <silent> gP :YRPaste 'gP'
+vnoremap gl $
+nnoremap gl $
+vnoremap gh ^
+nnoremap gh ^
+xnoremap <silent> p :YRPaste 'p', 'v'
+nnoremap <silent> p :YRPaste 'p'
+xnoremap <silent> x :YRDeleteRange 'v'
+xnoremap <silent> y :YRYankRange 'v'
+nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
+nnoremap <silent> <SNR>61_yrrecord :call YRRecord3()
+vnoremap <Plug>ZenCodingCodePretty :call zencoding#codePretty()
+nnoremap <Plug>ZenCodingAnchorizeSummary :call zencoding#anchorizeURL(1)
+nnoremap <Plug>ZenCodingAnchorizeURL :call zencoding#anchorizeURL(0)
+nnoremap <Plug>ZenCodingRemoveTag :call zencoding#removeTag()
+nnoremap <Plug>ZenCodingSplitJoinTagNormal :call zencoding#splitJoinTag()
+vnoremap <Plug>ZenCodingMergeLines :call zencoding#mergeLines()
+nnoremap <Plug>ZenCodingToggleComment :call zencoding#toggleComment()
+nnoremap <Plug>ZenCodingImageSize :call zencoding#imageSize()
+nnoremap <Plug>ZenCodingPrev :call zencoding#moveNextPrev(1)
+nnoremap <Plug>ZenCodingNext :call zencoding#moveNextPrev(0)
+vnoremap <Plug>ZenCodingBalanceTagOutwardVisual :call zencoding#balanceTag(-2)
+nnoremap <Plug>ZenCodingBalanceTagOutwardNormal :call zencoding#balanceTag(-1)
+vnoremap <Plug>ZenCodingBalanceTagInwardVisual :call zencoding#balanceTag(2)
+nnoremap <Plug>ZenCodingBalanceTagInwardNormal :call zencoding#balanceTag(1)
+nnoremap <Plug>ZenCodingExpandWord :call zencoding#expandAbbr(1,"")
+nnoremap <Plug>ZenCodingExpandNormal :call zencoding#expandAbbr(3,"")
+vnoremap <Plug>ZenCodingExpandVisual :call zencoding#expandAbbr(2,"")
+snoremap <silent> <BS> c
+snoremap <silent> <C-Tab> :call UltiSnips_ListSnippets()
+xnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment("x", "Uncomment")
+nnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment("n", "Uncomment")
+xnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment("x", "AlignBoth")
+nnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment("n", "AlignBoth")
+xnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment("x", "AlignLeft")
+nnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment("n", "AlignLeft")
+nnoremap <silent> <Plug>NERDCommenterAppend :call NERDComment("n", "Append")
+xnoremap <silent> <Plug>NERDCommenterYank :call NERDComment("x", "Yank")
+nnoremap <silent> <Plug>NERDCommenterYank :call NERDComment("n", "Yank")
+xnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment("x", "Sexy")
+nnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment("n", "Sexy")
+xnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment("x", "Invert")
+nnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment("n", "Invert")
+nnoremap <silent> <Plug>NERDCommenterToEOL :call NERDComment("n", "ToEOL")
+xnoremap <silent> <Plug>NERDCommenterNested :call NERDComment("x", "Nested")
+nnoremap <silent> <Plug>NERDCommenterNested :call NERDComment("n", "Nested")
+xnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment("x", "Minimal")
+nnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment("n", "Minimal")
+xnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment("x", "Toggle")
+nnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment("n", "Toggle")
+xnoremap <silent> <Plug>NERDCommenterComment :call NERDComment("x", "Comment")
+nnoremap <silent> <Plug>NERDCommenterComment :call NERDComment("n", "Comment")
+nnoremap <silent> <F5> :NERDTreeToggle
+map <S-CR> O
+nnoremap <silent> <F11> :YRShow
+nnoremap <silent> <F4> :GundoToggle
+imap  <Left>
+imap  <Right>
+inoremap <silent> 	 =UltiSnips_ExpandSnippet()
+inoremap <silent> <NL> =UltiSnips_JumpForwards()
+inoremap <silent>  =UltiSnips_JumpBackwards()
+imap A <Plug>ZenCodingAnchorizeSummary
+imap a <Plug>ZenCodingAnchorizeURL
+imap k <Plug>ZenCodingRemoveTag
+imap j <Plug>ZenCodingSplitJoinTagInsert
+imap / <Plug>ZenCodingToggleComment
+imap i <Plug>ZenCodingImageSize
+imap N <Plug>ZenCodingPrev
+imap n <Plug>ZenCodingNext
+imap D <Plug>ZenCodingBalanceTagOutwardInsert
+imap d <Plug>ZenCodingBalanceTagInwardInsert
+imap ; <Plug>ZenCodingExpandWord
+imap , <Plug>ZenCodingExpandAbbr
+cmap "" ""<Left>
+imap "" ""<Left>
+cmap '' ''<Left>
+imap '' ''<Left>
+cmap () ()<Left>
+imap () ()<Left>
+cmap <> <><Left>
+imap <> <><Left>
+cmap [] []<Left>
+imap [] []<Left>
+cmap {} {}<Left>
+imap {} {}<Left>
+let &cpo=s:cpo_save
+unlet s:cpo_save
+set autoindent
+set background=dark
+set backspace=indent,eol,start
+set completefunc=neocomplcache#manual_complete
+set completeopt=longest,menuone
+set expandtab
+set fileencodings=ucs-bom,utf-8,default,latin1
+set helplang=en
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set listchars=tab:»-
+set printoptions=paper:letter
+set ruler
+set runtimepath=~/.vim/bundle/vundle,~/.vim/bundle/neocomplcache,~/.vim/bundle/nerdtree,~/.vim/bundle/nerdcommenter,~/.vim/bundle/sudo.vim,~/.vim/bundle/sessionman.vim,~/.vim/bundle/vimerl,~/.vim/bundle/vim-erlang-skeletons,~/.vim/bundle/L9,~/.vim/bundle/vim-powerline,~/.vim/bundle/vim-golang,~/.vim/bundle/gocode/vim/,~/.vim/bundle/Fortune-vimtips,~/.vim/bundle/tabular,~/.vim/bundle/gundo.vim,~/.vim/bundle/FuzzyFinder,~/.vim/bundle/project.tar.gz,~/.vim/bundle/ultisnips,~/.vim/bundle/vimwiki,~/.vim/bundle/zencoding-vim,~/.vim/bundle/webapi-vim,~/.vim/bundle/gist-vim,~/.vim/bundle/YankRing.vim,~/.vim/bundle/xoria256.vim,~/.vim/bundle/vim-colors-solarized,~/.vim,/var/lib/vim/addons,/usr/share/vim/vimfiles,/usr/share/vim/vim73,/usr/share/vim/vimfiles/after,/var/lib/vim/addons/after,~/.vim/after,~/.vim/bundle/vundle/,~/.vim/bundle/vundle/after,~/.vim/bundle/neocomplcache/after,~/.vim/bundle/nerdtree/after,~/.vim/bundle/nerdcommenter/after,~/.vim/bundle/sudo.vim/after,~/.vim/bundle/sessionman.vim/after,~/.vim/bundle/vimerl/after,~/.vim/bundle/vim-erlang-skeletons/after,~/.vim/bundle/L9/after,~/.vim/bundle/vim-powerline/after,~/.vim/bundle/vim-golang/after,~/.vim/bundle/gocode/vim//after,~/.vim/bundle/Fortune-vimtips/after,~/.vim/bundle/tabular/after,~/.vim/bundle/gundo.vim/after,~/.vim/bundle/FuzzyFinder/after,~/.vim/bundle/project.tar.gz/after,~/.vim/bundle/ultisnips/after,~/.vim/bundle/vimwiki/after,~/.vim/bundle/zencoding-vim/after,~/.vim/bundle/webapi-vim/after,~/.vim/bundle/gist-vim/after,~/.vim/bundle/YankRing.vim/after,~/.vim/bundle/xoria256.vim/after,~/.vim/bundle/vim-colors-solarized/after
+set scrolloff=3
+set shiftwidth=4
+set showcmd
+set smartcase
+set smartindent
+set softtabstop=4
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+set tabstop=4
+set tags=./tags,./TAGS,tags,TAGS,/usr/local/lib/erlang/tags
+set whichwrap=b,s,<,>
+set winaltkeys=no
+let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
+let v:this_session=expand("<sfile>:p")
+silent only
+cd /media
+if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
+  let s:wipebuf = bufnr('%')
+endif
+set shortmess=aoO
+badd +1 ~/go/mygo/src/example/hello/Makefile
+silent! argdel *
+edit ~/go/mygo/src/example/hello/Makefile
+set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd _ | wincmd |
+split
+1wincmd k
+wincmd w
+wincmd w
+set nosplitbelow
+set nosplitright
+wincmd t
+set winheight=1 winwidth=1
+exe '1resize ' . ((&lines * 20 + 21) / 43)
+exe 'vert 1resize ' . ((&columns * 22 + 87) / 175)
+exe '2resize ' . ((&lines * 20 + 21) / 43)
+exe 'vert 2resize ' . ((&columns * 22 + 87) / 175)
+exe 'vert 3resize ' . ((&columns * 152 + 87) / 175)
+argglobal
+enew
+file __SessionList__
+nnoremap <buffer> <silent> q :bwipeout!
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=wipe
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#manual_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != ''
+setlocal filetype=
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!Pl#Statusline(0,1)
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != ''
+setlocal syntax=
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+lcd ~/go/mygo/src/example/hello
+wincmd w
+argglobal
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=
+setlocal buflisted
+setlocal buftype=
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=sO:#\ -,mO:#\ \ ,b:#
+setlocal commentstring=#\ %s
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#manual_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal noexpandtab
+if &filetype != 'make'
+setlocal filetype=make
+endif
+setlocal foldcolumn=0
+setlocal foldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=croql
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=^\\s*include
+setlocal includeexpr=
+setlocal indentexpr=GetMakeIndent()
+setlocal indentkeys=!^F,o,O,<:>,=else,=endif
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal modifiable
+setlocal nrformats=octal,hex
+set number
+setlocal number
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal nosmartindent
+setlocal softtabstop=0
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!Pl#Statusline(0,1)
+setlocal suffixesadd=
+setlocal swapfile
+setlocal synmaxcol=3000
+if &syntax != 'make'
+setlocal syntax=make
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal nowinfixwidth
+setlocal wrap
+setlocal wrapmargin=0
+silent! normal! zE
+let s:l = 1 - ((0 * winheight(0) + 10) / 20)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+1
+normal! 0
+lcd ~/go/mygo/src/example/hello
+wincmd w
+argglobal
+enew
+file /media/NERD_tree_1
+setlocal keymap=
+setlocal noarabic
+setlocal autoindent
+setlocal balloonexpr=
+setlocal nobinary
+setlocal bufhidden=hide
+setlocal nobuflisted
+setlocal buftype=nofile
+setlocal nocindent
+setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinoptions=
+setlocal cinwords=if,else,while,do,for,switch
+setlocal colorcolumn=
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
+setlocal commentstring=/*%s*/
+setlocal complete=.,w,b,u,t,i
+setlocal concealcursor=
+setlocal conceallevel=0
+setlocal completefunc=neocomplcache#manual_complete
+setlocal nocopyindent
+setlocal cryptmethod=
+setlocal nocursorbind
+setlocal nocursorcolumn
+set cursorline
+setlocal cursorline
+setlocal define=
+setlocal dictionary=
+setlocal nodiff
+setlocal equalprg=
+setlocal errorformat=
+setlocal expandtab
+if &filetype != 'nerdtree'
+setlocal filetype=nerdtree
+endif
+setlocal foldcolumn=0
+setlocal nofoldenable
+setlocal foldexpr=0
+setlocal foldignore=#
+setlocal foldlevel=0
+setlocal foldmarker={{{,}}}
+setlocal foldmethod=manual
+setlocal foldminlines=1
+setlocal foldnestmax=20
+setlocal foldtext=foldtext()
+setlocal formatexpr=
+setlocal formatoptions=tcq
+setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
+setlocal grepprg=
+setlocal iminsert=2
+setlocal imsearch=2
+setlocal include=
+setlocal includeexpr=
+setlocal indentexpr=
+setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
+setlocal noinfercase
+setlocal iskeyword=@,48-57,_,192-255
+setlocal keywordprg=
+setlocal nolinebreak
+setlocal nolisp
+set list
+setlocal list
+setlocal makeprg=
+setlocal matchpairs=(:),{:},[:]
+setlocal modeline
+setlocal nomodifiable
+setlocal nrformats=octal,hex
+set number
+setlocal nonumber
+setlocal numberwidth=4
+setlocal omnifunc=
+setlocal path=
+setlocal nopreserveindent
+setlocal nopreviewwindow
+setlocal quoteescape=\\
+setlocal noreadonly
+setlocal norelativenumber
+setlocal norightleft
+setlocal rightleftcmd=search
+setlocal noscrollbind
+setlocal shiftwidth=4
+setlocal noshortname
+setlocal smartindent
+setlocal softtabstop=4
+setlocal nospell
+setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellfile=
+setlocal spelllang=en
+setlocal statusline=%!Pl#Statusline(11,1)
+setlocal suffixesadd=
+setlocal noswapfile
+setlocal synmaxcol=3000
+if &syntax != 'nerdtree'
+setlocal syntax=nerdtree
+endif
+setlocal tabstop=4
+setlocal tags=
+setlocal textwidth=0
+setlocal thesaurus=
+setlocal noundofile
+setlocal nowinfixheight
+setlocal winfixwidth
+setlocal nowrap
+setlocal wrapmargin=0
+lcd /media
+wincmd w
+exe '1resize ' . ((&lines * 20 + 21) / 43)
+exe 'vert 1resize ' . ((&columns * 22 + 87) / 175)
+exe '2resize ' . ((&lines * 20 + 21) / 43)
+exe 'vert 2resize ' . ((&columns * 22 + 87) / 175)
+exe 'vert 3resize ' . ((&columns * 152 + 87) / 175)
+tabnext 1
+if exists('s:wipebuf')
+  silent exe 'bwipe ' . s:wipebuf
+endif
+unlet! s:wipebuf
+set winheight=1 winwidth=20 shortmess=filnxtToO
+let s:sx = expand("<sfile>:p:r")."x.vim"
+if file_readable(s:sx)
+  exe "source " . fnameescape(s:sx)
+endif
+let &so = s:so_save | let &siso = s:siso_save
+doautoall SessionLoadPost
+unlet SessionLoad
+" vim: set ft=vim :

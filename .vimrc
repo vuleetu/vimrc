@@ -111,7 +111,7 @@ Bundle "ZoomWin"
 ""Command-T
 " Install ruby-dev first !important
 " Then go to Command-T/ruby/command-t/, run: ruby extconf.rb && make
-Bundle "wincent/Command-T"
+"Bundle "wincent/Command-T"
 "Organize window
 Bundle "spolu/dwm.vim"
 ""Match Tag
@@ -243,6 +243,7 @@ nnoremap <silent> <F9> :YRShow<CR>
 "taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
 let Tlist_Use_Right_Window = 1
+"let s:tlist_def_go_settings = 'go;f:func;v:var;t:type'
 
 "Narrow region设置
 let g:nrrw_topbot_leftright = 'botright'
@@ -250,9 +251,37 @@ let g:nrrw_topbot_leftright = 'botright'
 "Tagbar设置
 nnoremap <silent> <F7> :TagbarToggle<CR>
 
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+\ }
+
 "Command-T setting
-nnoremap <silent> <Leader>ct :CommandT<CR>
-nnoremap <silent> <Leader>cf :CommandTBuffer<CR>
+"nnoremap <silent> <Leader>ct :CommandT<CR>
+"nnoremap <silent> <Leader>cf :CommandTBuffer<CR>
 
 
 imap <C-f> <Right>
