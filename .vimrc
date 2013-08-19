@@ -49,6 +49,9 @@ Bundle "sjl/gundo.vim"
 Bundle "FuzzyFinder"
 ""project plugin
 Bundle "project.tar.gz"
+"lua
+Bundle "xolox/vim-misc"
+Bundle "xolox/vim-lua-ftplugin"
 "snippet
 Bundle "SirVer/ultisnips"
 "vimwiki
@@ -239,6 +242,9 @@ nnoremap <silent> <F4> :GundoToggle<CR>
 
 "yankring
 nnoremap <silent> <F9> :YRShow<CR>
+function! YRRunAfterMaps()
+    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
 
 "taglist
 nnoremap <silent> <F8> :TlistToggle<CR>
@@ -360,6 +366,9 @@ let NERDTreeWinSize = 38
 
 "set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
 let g:Powerline_symbols = 'fancy'
+
+"lua
+let g:lua_complete_omni = 1
 
 command W w !sudo tee % > /dev/null
 
